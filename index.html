@@ -1,0 +1,98 @@
+<!-- index.html – minimalistische One‑Page‑Site mit modularem CSS -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Webdesign, das verkauft | Marius H.</title>
+  <meta name="description" content="Ultra‑moderne One‑Page‑Websites in 5 Tagen – minimalistisch, schnell, überzeugend.">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <span class="logo">Marius H.</span>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero" class="section">
+    <div class="hero-content">
+      <h1>Webdesign, das verkauft</h1>
+      <p>Agentur‑Qualität ab 149 €, online in 5 Tagen. Zahlung erst, wenn du überzeugt bist.</p>
+      <a href="#contact" class="btn">Projekt starten</a>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Leistungen</h2>
+    <div class="services-grid">
+      <article class="service-card">
+        <h3>One‑Page‑Sites</h3>
+        <p>Kompakt, fokussiert – alles Wichtige auf einen Blick.</p>
+      </article>
+      <article class="service-card">
+        <h3>Responsive Design</h3>
+        <p>Perfekt für Desktop, Tablet und Smartphone.</p>
+      </article>
+      <article class="service-card">
+        <h3>Blitz‑Lieferung</h3>
+        <p>Bereit zum Launch in nur fünf Tagen.</p>
+      </article>
+      <article class="service-card">
+        <h3>Zahl erst bei Zufriedenheit</h3>
+        <p>Du bist glücklich – dann erst Rechnung.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Kontakt</h2>
+    <form class="contact-form" action="mailto:dudenicer67@gmail.com" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label for="name">Name*</label>
+        <input id="name" name="Name" type="text" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E‑Mail*</label>
+        <input id="email" name="E-Mail" type="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Nachricht*</label>
+        <textarea id="message" name="Nachricht" required></textarea>
+      </div>
+      <button type="submit" class="btn">Anfrage senden</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Marius H.</p>
+    <p><a href="impressum.html">Impressum</a></p>
+  </footer>
+
+  <script>
+    /* Maus‑Gradient & Blur – ≤5 KB Vanilla JS */
+    const root = document.documentElement;
+    document.addEventListener('mousemove', e => {
+      root.style.setProperty('--mouse-x', (e.clientX / innerWidth * 100) + '%');
+      root.style.setProperty('--mouse-y', (e.clientY / innerHeight * 100) + '%');
+    });
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry =>
+        entry.target.classList.toggle('blurred', !entry.isIntersecting)
+      ),
+      { rootMargin: '-20% 0px -20% 0px' }
+    );
+    document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>

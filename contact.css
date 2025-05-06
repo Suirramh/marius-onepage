@@ -1,0 +1,12 @@
+/* contact.css – Formular‑Styling & Bounce‑Button */
+#contact{background:var(--bg-light);color:#fff;padding:calc(var(--spacing)*2)0}
+#contact h2{font-family:'Playfair Display',serif;font-size:2.5rem;text-align:center;margin-bottom:var(--spacing)}
+.contact-form{background:var(--bg-dark);color:#eee;padding:var(--spacing);border-radius:var(--radius);box-shadow:var(--shadow);max-width:500px;margin:auto;display:grid;gap:var(--spacing)}
+.form-group label{margin-bottom:.25rem;font-weight:600}
+.form-group input,.form-group textarea{width:100%;padding:.5rem;border:none;border-radius:var(--radius);background:#222;color:#eee}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.contact-form button{width:100%;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#111;font-weight:600;border:none;padding:.75rem 1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);transition:background .3s}
+.contact-form button:hover{animation:bounce 1.5s infinite}
+footer{background:var(--bg-dark);color:#eee;padding:var(--spacing)1rem;text-align:center;border-top:1px solid var(--accent1)}
+footer a{color:#eee;text-decoration:underline;transition:color .3s}
+footer a:hover{color:var(--accent1)}
